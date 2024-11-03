@@ -32,7 +32,6 @@ h3 {
 /* Updated Header Styles */
 header {
     display: flex;
-    justify-content: center; /* Centering the nav items */
     align-items: center;
     padding: 20px 50px;
     background: rgba(30, 30, 30, 0.9);
@@ -41,31 +40,30 @@ header {
     z-index: 1000;
 }
 
-nav {
-    display: flex;
-    align-items: center;
-}
-
+/* Logo on the left */
 nav h1 {
     font-weight: bold;
-    margin-right: auto; /* Moves the logo/name to the left */
+    margin-right: auto; /* Ensures the logo stays on the left */
 }
 
+/* Navigation links centered */
 nav ul {
-    list-style: none;
     display: flex;
+    justify-content: center; /* Center the list items */
+    list-style: none;
     margin: 0;
     padding: 0;
+    flex: 1; /* Allows the ul to take available space */
 }
 
 nav ul li {
-    margin: 0 20px;
+    margin: 0 20px; /* Spacing between items */
 }
 
 nav ul li a {
-    color: #e0e0e0;
+    color: #e0e0e0; /* Link color */
     text-decoration: none;
-    transition: color 0.3s ease;
+    transition: color 0.3s ease; /* Transition effect */
 }
 
 nav ul li a:hover {
