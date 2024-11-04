@@ -203,91 +203,107 @@ section {
     text-transform: uppercase;
 }
 
-/* Portfolio Grid */
+/* Portfolio Grid for Different Aspect Ratios */
 .portfolio-gallery {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 20px;
     justify-items: center;
     margin-top: 40px;
 }
 
-/* Video Item Styling */
 .portfolio-item {
     position: relative;
     overflow: hidden;
     border-radius: 8px;
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
     cursor: pointer;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
 .portfolio-item:hover {
-    transform: scale(1.05); /* Scale effect */
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+    transform: scale(1.02); /* Minimal scale on hover */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.5); /* Subtle shadow */
 }
 
-/* Video Element Styling */
+/* Video Styling */
 .portfolio-item video {
     width: 100%;
-    height: auto;
+    height: 100%;
     border-radius: 8px;
+    object-fit: cover; /* Ensures the video covers the container */
     transition: transform 0.3s ease-in-out;
 }
 
 .portfolio-item:hover video {
-    transform: scale(1.1); /* Slight zoom effect */
+    transform: scale(1.05); /* Slight zoom on hover */
 }
 
-/* Video Overlay (Play Button) */
+/* Aspect Ratio Control */
+.portfolio-item.wide-video {
+    grid-column: span 2; /* 16:9 video takes more width */
+}
+
+.portfolio-item.tall-video {
+    grid-row: span 2; /* 9:16 vertical video taller */
+}
+
+/* Overlay Styling */
 .portfolio-item .overlay {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.7);
+    background: rgba(0, 0, 0, 0.6);
     opacity: 0;
     transition: opacity 0.3s ease;
     display: flex;
     justify-content: center;
     align-items: center;
-    color: #ffffff;
     border-radius: 8px;
 }
 
 .portfolio-item:hover .overlay {
-    opacity: 1; /* Show overlay on hover */
+    opacity: 1; /* Fade in overlay on hover */
 }
 
-.portfolio-item .overlay h3 {
-    font-size: 1.5rem;
-    color: #ff69b4;
-    text-transform: uppercase;
-    margin-bottom: 10px;
-}
-
+/* Minimalist Play Button */
 .portfolio-item .overlay .play-button {
-    font-size: 3rem;
-    color: #ff69b4;
-    background: rgba(255, 255, 255, 0.1);
-    padding: 20px;
+    width: 60px;
+    height: 60px;
+    background: rgba(255, 255, 255, 0.2);
+    border: 2px solid #ff69b4;
     border-radius: 50%;
-    display: inline-block;
-    transition: transform 0.3s ease, background-color 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background 0.3s ease, transform 0.3s ease;
 }
 
 .portfolio-item:hover .overlay .play-button {
-    transform: scale(1.2); /* Enlarge play button on hover */
-    background-color: rgba(255, 255, 255, 0.3);
+    background: rgba(255, 255, 255, 0.4);
+    transform: scale(1.1);
+}
+
+.portfolio-item .overlay .play-button::before {
+    content: '▶';
+    color: #ff69b4; /* Pink for the play icon */
+    font-size: 1.5rem;
+    margin-left: 5px; /* To center the triangle */
 }
 
 /* Responsive Design */
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
     .portfolio-gallery {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr 1fr; /* Adjust to two columns on medium screens */
     }
 }
 
+@media (max-width: 768px) {
+    .portfolio-gallery {
+        grid-template-columns: 1fr; /* Single column for small screens */
+    }
+}
 
 /* Testimonials Styles */
 .testimonials blockquote {
