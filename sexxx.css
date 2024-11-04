@@ -187,24 +187,95 @@ section {
     transform: translateY(-5px); /* Lift effect on hover */
 }
 
-/* Portfolio Styles */
+/* Portfolio Section */
+.portfolio {
+    padding: 80px 20px;
+    background: #121212;
+    color: #f0f0f0;
+    text-align: center;
+}
+
+.portfolio h2 {
+    color: #ff69b4; /* Pink color for section heading */
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
 .portfolio-gallery {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 20px;
+    justify-items: center;
+    margin-top: 40px;
 }
 
 .portfolio-item {
-    background: #2c2c2c;
+    position: relative;
+    overflow: hidden;
     border-radius: 8px;
-    padding: 20px;
-    flex: 1 1 300px;
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    cursor: pointer;
 }
 
 .portfolio-item:hover {
-    transform: translateY(-5px);
+    transform: scale(1.05); /* Slight scaling effect */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5); /* Shadow on hover */
+}
+
+.portfolio-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    transition: transform 0.5s ease;
+}
+
+.portfolio-item:hover img {
+    transform: scale(1.1); /* Image zoom effect on hover */
+}
+
+.portfolio-item .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7); /* Dark overlay */
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ffffff;
+    text-align: center;
+    border-radius: 8px;
+}
+
+.portfolio-item:hover .overlay {
+    opacity: 1; /* Show overlay on hover */
+}
+
+.portfolio-item .overlay h3 {
+    color: #ff69b4; /* Pink for project title */
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.portfolio-item .overlay p {
+    font-size: 1rem;
+    color: #f0f0f0;
+    padding: 0 20px;
+    max-width: 250px;
+    line-height: 1.5;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .portfolio-gallery {
+        grid-template-columns: 1fr; /* Single column on small screens */
+    }
 }
 
 /* Testimonials Styles */
