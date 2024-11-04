@@ -68,17 +68,17 @@ nav ul li a {
 nav ul li a:hover {
     color: #ff69b4; /* Pink hover effect */
 }
-
 /* Hero Section */
 .hero {
     height: 100vh;
-    background: url('hero-background.jpg') no-repeat center center/cover;
+    background: url('hero-background.jpg') no-repeat center center/cover; /* Fullscreen background image */
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
     color: #ffffff;
-    position: relative;
+    overflow: hidden; /* Ensures content stays inside */
 }
 
 .hero::before {
@@ -88,28 +88,71 @@ nav ul li a:hover {
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(0, 0, 0, 0.5); /* Dark overlay */
+    background: rgba(0, 0, 0, 0.6); /* Dark overlay with transparency */
     z-index: 1;
 }
 
 .hero-content {
-    z-index: 2; /* Ensures text is above the overlay */
+    z-index: 2; /* Makes sure content appears on top of the overlay */
+    animation: fadeIn 1.5s ease-in-out; /* Smooth fade-in animation */
+}
+
+.hero h1 {
+    font-size: 4rem; /* Large, bold heading */
+    font-weight: bold;
+    margin-bottom: 20px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #ff69b4; /* Pink color for hero heading */
+    text-shadow: 2px 4px 10px rgba(0, 0, 0, 0.8); /* Text shadow for depth */
+    animation: slideInFromLeft 1.5s ease-out; /* Slide-in animation for text */
+}
+
+.hero p {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+    line-height: 1.6;
+    color: #f0f0f0; /* Light text color */
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    opacity: 0.85;
+    animation: slideInFromRight 1.5s ease-out; /* Slide-in for paragraph */
 }
 
 .cta-button {
     display: inline-block;
-    background: #ff69b4; /* Pink accent color */
+    background: #ff69b4; /* Pink button */
     padding: 15px 30px;
     border: none;
-    border-radius: 5px;
+    border-radius: 50px;
     color: #ffffff;
     text-decoration: none;
     font-weight: bold;
-    transition: background 0.3s ease;
+    font-size: 1.2rem;
+    transition: background 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 4px 15px rgba(255, 105, 180, 0.5); /* Button shadow */
 }
 
 .cta-button:hover {
     background: #ff3a93; /* Slightly darker pink on hover */
+    transform: translateY(-5px); /* Lift effect on hover */
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideInFromLeft {
+    from { transform: translateX(-100px); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes slideInFromRight {
+    from { transform: translateX(100px); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
 }
 
 /* Section Styles */
