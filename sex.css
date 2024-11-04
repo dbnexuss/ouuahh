@@ -1,11 +1,9 @@
-/* styles.css */
-
 /* General Styles */
 body {
     margin: 0;
     font-family: 'Arial', sans-serif;
     background-color: #121212; /* Dark background */
-    color: #e0e0e0; /* Light text */
+    color: #f0f0f0; /* Light text */
     line-height: 1.6;
 }
 
@@ -15,7 +13,7 @@ h1, h2, h3 {
 
 h1 {
     font-size: 2.5rem;
-    color: #ff6600; /* Accent color for headings */
+    color: #ff69b4; /* Pink color for headings */
 }
 
 h2 {
@@ -26,15 +24,16 @@ h2 {
 
 h3 {
     font-size: 1.5rem;
-    color: #ff6600; /* Accent color for sub-headings */
+    color: #ff69b4; /* Pink color for sub-headings */
 }
 
-/* Updated Header Styles */
+/* Header Styles */
 header {
     display: flex;
+    justify-content: space-between; /* Logo on the left, nav items centered */
     align-items: center;
     padding: 20px 50px;
-    background: rgba(30, 30, 30, 0.9);
+    background: rgba(30, 30, 30, 0.9); /* Slight transparency */
     position: fixed;
     width: 100%;
     z-index: 1000;
@@ -43,33 +42,32 @@ header {
 /* Logo on the left */
 nav h1 {
     font-weight: bold;
-    margin-right: auto; /* Ensures the logo stays on the left */
+    color: #ff69b4; /* Pink color for logo */
 }
 
 /* Navigation links centered */
 nav ul {
-    display: flex;
-    justify-content: center; /* Center the list items */
     list-style: none;
-    margin: 0;
+    display: flex;
+    justify-content: center;
+    margin: 0 auto; /* Centers the navigation */
     padding: 0;
-    flex: 1; /* Allows the ul to take available space */
 }
 
 nav ul li {
-    margin: 0 20px; /* Spacing between items */
+    margin: 0 20px; /* Spacing between navigation items */
 }
 
 nav ul li a {
-    color: #e0e0e0; /* Link color */
+    color: #f0f0f0; /* Light text color for navigation links */
     text-decoration: none;
-    transition: color 0.3s ease; /* Transition effect */
+    font-weight: bold;
+    transition: color 0.3s ease;
 }
 
 nav ul li a:hover {
-    color: #ff6600; /* Change color on hover */
+    color: #ff69b4; /* Pink hover effect */
 }
-
 
 /* Hero Section */
 .hero {
@@ -100,7 +98,7 @@ nav ul li a:hover {
 
 .cta-button {
     display: inline-block;
-    background: #ff6600; /* Accent color */
+    background: #ff69b4; /* Pink accent color */
     padding: 15px 30px;
     border: none;
     border-radius: 5px;
@@ -111,7 +109,7 @@ nav ul li a:hover {
 }
 
 .cta-button:hover {
-    background: #e55d00; /* Darker accent on hover */
+    background: #ff3a93; /* Slightly darker pink on hover */
 }
 
 /* Section Styles */
@@ -121,10 +119,10 @@ section {
 }
 
 .services, .portfolio, .about, .testimonials, .cta, .contact {
-    background: #1e1e1e;
+    background: #1e1e1e; /* Dark background for sections */
     margin: 20px 0;
     border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5); /* Subtle shadow */
 }
 
 .service-overview {
@@ -138,7 +136,7 @@ section {
     border-radius: 8px;
     padding: 20px;
     margin: 10px;
-    flex: 1 1 30%; /* Responsive columns */
+    flex: 1 1 30%; /* Responsive service items */
     transition: transform 0.3s ease;
 }
 
@@ -151,25 +149,25 @@ section {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 20px; /* Spacing between items */
+    gap: 20px;
 }
 
 .portfolio-item {
     background: #2c2c2c;
     border-radius: 8px;
     padding: 20px;
-    flex: 1 1 300px; /* Flexible item sizes */
+    flex: 1 1 300px;
     transition: transform 0.3s ease;
 }
 
 .portfolio-item:hover {
-    transform: translateY(-5px); /* Lift effect on hover */
+    transform: translateY(-5px);
 }
 
 /* Testimonials Styles */
 .testimonials blockquote {
     background: #2c2c2c;
-    border-left: 4px solid #ff6600; /* Accent border */
+    border-left: 4px solid #ff69b4; /* Pink border */
     margin: 20px auto;
     padding: 20px;
     max-width: 600px;
@@ -183,7 +181,7 @@ section {
     color: #ccc;
 }
 
-/* Call to Action Styles */
+/* Call to Action Section */
 .cta {
     background: #333;
 }
@@ -202,11 +200,11 @@ form input, form textarea {
     border: none;
     border-radius: 5px;
     background: #2c2c2c;
-    color: #e0e0e0;
+    color: #f0f0f0;
 }
 
 form button {
-    background: #ff6600;
+    background: #ff69b4;
     padding: 15px;
     border: none;
     border-radius: 5px;
@@ -217,7 +215,7 @@ form button {
 }
 
 form button:hover {
-    background: #e55d00;
+    background: #ff3a93;
 }
 
 /* Footer Styles */
@@ -239,12 +237,12 @@ form button:hover {
 }
 
 .footer ul li a {
-    color: #e0e0e0;
+    color: #f0f0f0;
     text-decoration: none;
 }
 
 .footer ul li a:hover {
-    color: #ff6600; /* Accent color on hover */
+    color: #ff69b4;
 }
 
 /* Responsive Design */
@@ -255,22 +253,22 @@ form button:hover {
     }
 
     .service-overview {
-        flex-direction: column; /* Stack services vertically */
+        flex-direction: column;
     }
 
     .portfolio-gallery {
-        flex-direction: column; /* Stack portfolio items vertically */
+        flex-direction: column;
     }
 
     .portfolio-item {
-        flex: 1 1 100%; /* Full width on mobile */
+        flex: 1 1 100%;
     }
 
     .cta-button {
-        width: 100%; /* Full width button on mobile */
+        width: 100%;
     }
 
     form input, form textarea {
-        width: 100%; /* Full width input on mobile */
+        width: 100%;
     }
 }
