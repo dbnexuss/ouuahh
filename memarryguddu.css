@@ -178,13 +178,28 @@ nav ul li a:hover::after {
 }
 
 .hero h1 {
-    font-size: 3rem; /* Sleeker heading */
-    font-weight: 300; /* Lighter, more minimalist feel */
-    color: #f5f5f5; /* Neutral color */
-    letter-spacing: 1px; /* Slight spacing for a modern look */
-    text-transform: uppercase;
-    margin-bottom: 15px;
+    font-size: 4rem; /* Larger font size for emphasis */
+    font-weight: 800; /* Heavier font weight for boldness */
+    color: #f5f5f5; /* White or light gray for contrast against dark background */
+    letter-spacing: 2px; /* Slight letter spacing for a modern feel */
+    text-transform: uppercase; /* Makes the text appear more impactful */
+    margin-bottom: 20px;
+    text-shadow: 3px 5px 15px rgba(0, 0, 0, 0.7); /* Subtle shadow for depth */
+    animation: fadeInText 1.2s ease-in-out forwards; /* Fade-in animation for smooth appearance */
 }
+
+/* Fade-in animation for the heading */
+@keyframes fadeInText {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px); /* Slight lift effect */
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 
 .hero p {
     font-size: 1.25rem;
