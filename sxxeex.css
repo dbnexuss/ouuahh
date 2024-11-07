@@ -68,17 +68,17 @@ nav ul li a {
 nav ul li a:hover {
     color: #ff69b4; /* Pink hover effect */
 }
-/* Hero Section */
+/* Hero Section Redesign */
 .hero {
     height: 100vh;
-    background: url('hero-background.jpg') no-repeat center center/cover; /* Fullscreen background image */
-    position: relative;
+    background: url('hero-background.jpg') no-repeat center center/cover; /* Subtle, low-contrast background */
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
-    color: #ffffff;
-    overflow: hidden; /* Ensures content stays inside */
+    position: relative;
+    overflow: hidden;
+    color: #ffffff; /* White text */
 }
 
 .hero::before {
@@ -88,72 +88,82 @@ nav ul li a:hover {
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(0, 0, 0, 0.6); /* Dark overlay with transparency */
+    background: rgba(0, 0, 0, 0.7); /* Subtle dark overlay */
     z-index: 1;
 }
 
 .hero-content {
-    z-index: 2; /* Makes sure content appears on top of the overlay */
-    animation: fadeIn 1.5s ease-in-out; /* Smooth fade-in animation */
+    z-index: 2; /* Ensure content is above overlay */
+    max-width: 800px;
+    padding: 20px;
+    animation: fadeIn 1.5s ease-in-out; /* Smooth fade-in */
 }
 
+/* Hero Headline */
 .hero h1 {
-    font-size: 4rem; /* Large, bold heading */
-    font-weight: bold;
+    font-size: 3.5rem; /* Modern, slightly smaller than before */
+    font-weight: 700; /* Bold but not overwhelming */
+    color: #ffffff; /* Pure white for contrast */
     margin-bottom: 20px;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    color: #ff69b4; /* Pink color for hero heading */
-    text-shadow: 2px 4px 10px rgba(0, 0, 0, 0.8); /* Text shadow for depth */
-    animation: slideInFromLeft 1.5s ease-out; /* Slide-in animation for text */
+    letter-spacing: 2px; /* Subtle letter-spacing for clean look */
+    text-transform: uppercase; /* Keep the uppercase for impact */
 }
 
+/* Hero Subtext */
 .hero p {
-    font-size: 1.5rem;
-    margin-bottom: 30px;
-    line-height: 1.6;
-    color: #f0f0f0; /* Light text color */
+    font-size: 1.2rem; /* Smaller, more concise */
+    margin-bottom: 40px;
+    color: #dcdcdc; /* Light gray for subtext */
+    line-height: 1.7; /* Good readability */
     max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
-    opacity: 0.85;
-    animation: slideInFromRight 1.5s ease-out; /* Slide-in for paragraph */
+    margin: 0 auto; /* Center text */
+    opacity: 0.85; /* Slight transparency */
 }
 
+/* CTA Button */
 .cta-button {
     display: inline-block;
-    background: #ff69b4; /* Pink button */
-    padding: 15px 30px;
+    background: #ffffff; /* White background for contrast */
+    color: #121212; /* Dark text for modern feel */
+    padding: 12px 40px; /* Clean, padded button */
     border: none;
-    border-radius: 50px;
-    color: #ffffff;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 1.2rem;
+    border-radius: 30px; /* Rounded button for modern style */
+    font-weight: 600;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
     transition: background 0.3s ease, transform 0.3s ease;
-    box-shadow: 0 4px 15px rgba(255, 105, 180, 0.5); /* Button shadow */
+    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.1); /* Light shadow */
 }
 
 .cta-button:hover {
-    background: #ff3a93; /* Slightly darker pink on hover */
-    transform: translateY(-5px); /* Lift effect on hover */
+    background: #f0f0f0; /* Slight color change on hover */
+    transform: translateY(-4px); /* Minimal lift effect */
+    box-shadow: 0 8px 20px rgba(255, 255, 255, 0.2); /* Shadow on hover */
 }
 
 /* Animations */
 @keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
-@keyframes slideInFromLeft {
-    from { transform: translateX(-100px); opacity: 0; }
-    to { transform: translateX(0); opacity: 1; }
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2.5rem; /* Adjust headline size on mobile */
+    }
+
+    .hero p {
+        font-size: 1rem; /* Adjust subtext size */
+    }
+
+    .cta-button {
+        width: 100%; /* Full width CTA button on mobile */
+        padding: 12px 0;
+    }
 }
 
-@keyframes slideInFromRight {
-    from { transform: translateX(100px); opacity: 0; }
-    to { transform: translateX(0); opacity: 1; }
-}
 
 /* Section Styles */
 section {
