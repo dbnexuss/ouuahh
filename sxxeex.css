@@ -30,44 +30,120 @@ h3 {
 /* Header Styles */
 header {
     display: flex;
-    justify-content: space-between; /* Logo on the left, nav items centered */
+    justify-content: space-between;
     align-items: center;
     padding: 20px 50px;
-    background: rgba(30, 30, 30, 0.9); /* Slight transparency */
+    background: rgba(255, 255, 255, 0.05); /* Minimal transparent header */
+    backdrop-filter: blur(10px); /* Adds a modern glass effect */
     position: fixed;
     width: 100%;
     z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    transition: background 0.3s ease-in-out; /* Smooth background transition */
 }
 
-/* Logo on the left */
+header.scrolled {
+    background: rgba(0, 0, 0, 0.8); /* Darker when scrolled */
+}
+
+/* Logo */
 nav h1 {
-    font-weight: bold;
-    color: #ff69b4; /* Pink color for logo */
+    font-weight: 600;
+    font-size: 1.8rem;
+    color: #f0f0f0; /* Neutral light color for logo */
+    transition: color 0.3s ease-in-out;
 }
 
-/* Navigation links centered */
+/* Navigation */
 nav ul {
     list-style: none;
     display: flex;
     justify-content: center;
-    margin: 0 auto; /* Centers the navigation */
-    padding: 0;
+    gap: 30px; /* Spacing between navigation items */
+    margin: 0;
 }
 
 nav ul li {
-    margin: 0 20px; /* Spacing between navigation items */
+    margin: 0; /* Remove extra margin */
 }
 
 nav ul li a {
-    color: #f0f0f0; /* Light text color for navigation links */
+    color: #e0e0e0; /* Light gray for links */
     text-decoration: none;
-    font-weight: bold;
-    transition: color 0.3s ease;
+    font-weight: 500;
+    font-size: 1rem;
+    padding: 5px 10px;
+    position: relative;
+    transition: color 0.2s ease, border-color 0.2s ease;
 }
 
-nav ul li a:hover {
-    color: #ff69b4; /* Pink hover effect */
+nav ul li a::after {
+    content: "";
+    display: block;
+    width: 0;
+    height: 2px;
+    background: #ff69b4; /* Pink for underline hover */
+    transition: width 0.3s ease;
+    position: absolute;
+    bottom: -5px;
+    left: 0;
 }
+
+nav ul li a:hover::after {
+    width: 100%;
+}
+
+/* CTA Button */
+.cta-button {
+    background: #ff69b4; /* Keep pink for CTA */
+    padding: 10px 25px;
+    border: none;
+    border-radius: 50px;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: background 0.3s ease;
+    box-shadow: none; /* Remove shadow for cleaner look */
+}
+
+.cta-button:hover {
+    background: #ff3a93; /* Slightly darker on hover */
+}
+
+/* Mobile Navigation */
+@media (max-width: 768px) {
+    header {
+        padding: 15px 30px;
+    }
+
+    nav ul {
+        display: none;
+    }
+
+    .menu-icon {
+        display: inline-block;
+        font-size: 1.5rem;
+        color: #f0f0f0;
+        cursor: pointer;
+    }
+
+    .menu-active nav ul {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background: rgba(0, 0, 0, 0.9);
+        padding: 20px;
+    }
+
+    nav ul li {
+        margin-bottom: 20px;
+    }
+}
+
 /* Hero Section Redesign */
 .hero {
     height: 100vh;
