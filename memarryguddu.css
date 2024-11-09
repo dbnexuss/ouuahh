@@ -95,7 +95,7 @@ nav ul li a:hover::after {
 
 /* CTA Button */
 .cta-button {
-    background: #ff69b4; /* Keep pink for CTA */
+    background: #ff69b4; /* Pink background */
     padding: 10px 25px;
     border: none;
     border-radius: 50px;
@@ -104,11 +104,11 @@ nav ul li a:hover::after {
     font-weight: 600;
     font-size: 1rem;
     transition: background 0.3s ease;
-    box-shadow: none; /* Remove shadow for cleaner look */
+    box-shadow: none;
 }
 
 .cta-button:hover {
-    background: #ff3a93; /* Slightly darker on hover */
+    background: #ff3a93; /* Darker pink on hover */
 }
 
 /* Mobile Navigation */
