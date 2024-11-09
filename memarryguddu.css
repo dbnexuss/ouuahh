@@ -200,7 +200,6 @@ nav ul li a:hover::after {
     }
 }
 
-
 .hero p {
     font-size: 1.25rem;
     color: #cccccc; /* Subtle, muted subheading color */
@@ -210,29 +209,27 @@ nav ul li a:hover::after {
     opacity: 0.85; /* Keep a clean look */
 }
 
-/* CTA Button */
 .cta-button {
-    background: #ff69b4; /* Pink background */
-    padding: 10px 25px;
-    border: none;
-    border-radius: 50px;
-    color: #ffffff;
+    display: inline-block;
+    background: #ff69b4; /* Pink background for the hero CTA */
+    padding: 12px 25px;
+    border-radius: 30px;
+    color: #fff;
     text-decoration: none;
-    font-weight: 600;
-    font-size: 1rem;
-    transition: background 0.3s ease;
-    box-shadow: none;
+    font-size: 1.1rem;
+    transition: background 0.3s ease, transform 0.3s ease;
 }
 
 .cta-button:hover {
-    background: #ff3a93; /* Darker pink on hover */
+    background: #ff3a93; /* Darker pink on hover for hero CTA */
+    transform: translateY(-3px); /* Small lift */
 }
 
-
-/* Fade-in animation */
+/* Fade-in animation for the Hero Section */
 @keyframes fadeInHero {
     to { opacity: 1; }
 }
+
 
 /* Section Styles */
 section {
