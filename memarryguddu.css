@@ -210,21 +210,24 @@ nav ul li a:hover::after {
     opacity: 0.85; /* Keep a clean look */
 }
 
+/* CTA Button */
 .cta-button {
-    display: inline-block;
-    background: #333; /* Professional, muted button */
-    padding: 12px 25px;
-    border-radius: 30px;
-    color: #fff;
+    background: #ff69b4; /* Pink background */
+    padding: 10px 25px;
+    border: none;
+    border-radius: 50px;
+    color: #ffffff;
     text-decoration: none;
-    font-size: 1.1rem;
-    transition: background 0.3s ease, transform 0.3s ease;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: background 0.3s ease;
+    box-shadow: none;
 }
 
 .cta-button:hover {
-    background: #ff69b4; /* Subtle pink on hover for brand consistency */
-    transform: translateY(-3px); /* Small lift */
+    background: #ff3a93; /* Darker pink on hover */
 }
+
 
 /* Fade-in animation */
 @keyframes fadeInHero {
