@@ -435,3 +435,141 @@ section {
         width: 100%;
     }
 }
+
+/* Base styles for mobile first */
+body {
+  font-size: 16px;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Example of container that will adapt its width */
+.container {
+  width: 100%;
+  padding: 20px;
+}
+
+/* Make images responsive */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Default styles for all devices (base styles) */
+.header, .main, .footer {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Responsive Design - Tablets (from 600px to 900px) */
+@media screen and (min-width: 600px) and (max-width: 899px) {
+  .navbar {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .main {
+    padding: 10px;
+  }
+
+  .container {
+    padding: 15px;
+  }
+
+  .sidebar {
+    display: none; /* Hide sidebar on tablets */
+  }
+
+  .content {
+    width: 100%;
+    margin: 0;
+  }
+
+  .footer {
+    text-align: center;
+    padding: 10px;
+  }
+}
+
+/* Responsive Design - Desktops (from 900px and up) */
+@media screen and (min-width: 900px) {
+  .navbar {
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
+  .container {
+    width: 80%;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .sidebar {
+    display: block;
+    width: 25%;
+    float: left;
+  }
+
+  .content {
+    width: 70%;
+    margin-left: 25%;
+  }
+
+  .footer {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+  }
+
+  img {
+    max-width: 100%; /* Ensure images do not overflow */
+  }
+}
+
+/* Responsive Design - Large screens (Desktop & wider monitors) */
+@media screen and (min-width: 1200px) {
+  .container {
+    width: 80%;
+  }
+
+  .navbar {
+    justify-content: space-evenly;
+  }
+
+  .footer {
+    padding: 30px;
+    text-align: center;
+  }
+}
+
+/* Mobile-specific styles */
+@media screen and (max-width: 599px) {
+  body {
+    font-size: 14px; /* Make text slightly smaller for smaller devices */
+  }
+
+  .navbar {
+    flex-direction: column;
+    padding: 10px;
+  }
+
+  .container {
+    padding: 10px;
+  }
+
+  .sidebar {
+    display: none;
+  }
+
+  .footer {
+    font-size: 12px;
+    padding: 10px;
+  }
+}
